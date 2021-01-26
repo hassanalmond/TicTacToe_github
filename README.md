@@ -1,2 +1,2 @@
 # TicTacToe_github
- This python3 progam plays tic tac toe
+ This python3 program plays tic tac toe

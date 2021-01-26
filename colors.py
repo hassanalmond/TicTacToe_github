@@ -1,0 +1,5 @@
+CEND = '\33[0m'
+CRED = '\33[31m'
+CBLUE = '\33[34m'
+CVIOLET = '\33[35m'
+CORANGE = '\33[93m'
