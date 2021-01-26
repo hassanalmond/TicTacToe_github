@@ -1,5 +1,5 @@
 from colors import *
-from drawing import key_dict, new_board
+from drawings import key_dict, new_board
 
 clear = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
