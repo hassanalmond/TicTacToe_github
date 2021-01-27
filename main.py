@@ -40,6 +40,17 @@ def play(board, player):
 
 def check_win(board, player):
     win_statement = f"{CBLUE}{player} has won!"
+    if board[0][0] == board[1][1] and board[0][0] == board[2][2]:
+        # checks diagonal 1
+        if board[0][0] == player[0]:
+            print(win_statement)
+            return True
+    if board[0][2] == board[1][1] and board[0][2] == board[2][0]:
+        # checks diagonal 2
+        if board[0][2] == player[0]:
+            print(win_statement)
+            return True
+
     for i in range(len(board)):
         if board[i][0] == board[i][1] and board[i][0] == board[i][2]:
             # checks horizontal wins
@@ -51,17 +62,6 @@ def check_win(board, player):
             if board[0][i] == player[0]:
                 print(win_statement)
                 return True
-
-    if board[0][0] == board[1][1] and board[0][0] == board[2][2]:
-        # checks diagonal 1
-        if board[0][0] == player[0]:
-            print(win_statement)
-            return True
-    if board[0][2] == board[1][1] and board[0][2] == board[2][0]:
-        # checks diagonal 2
-        if board[0][2] == player[0]:
-            print(win_statement)
-            return True
     return False
 
 
