@@ -1,16 +1,11 @@
 from colors import *
 from drawings import key_dict, new_board
-import os
+
+clear = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 
 def draw_board(board):
-    # clears previous board
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        os.system("clear")
-    print("\n\n")
-    # prints board
+    print(clear)
     for i in board:
         print(f"{i[0]}  {i[1]}  {i[2]}")
     print("\n\n\n")
@@ -51,17 +46,16 @@ def check_win(board, player):
             if board[0][i] == player[0]:
                 print(win_statement)
                 return True
-
-    if board[0][0] == board[1][1] and board[0][0] == board[2][2]:
-        # checks diagonal 1
-        if board[0][0] == player[0]:
-            print(win_statement)
-            return True
-    if board[0][2] == board[1][1] and board[0][2] == board[2][0]:
-        # checks diagonal 2
-        if board[0][2] == player[0]:
-            print(win_statement)
-            return True
+        if board[0][0] == board[1][1] and board[0][0] == board[2][2]:
+            # checks diagonal 1
+            if board[0][0] == player[0]:
+                print(win_statement)
+                return True
+        if board[0][2] == board[1][1] and board[0][2] == board[2][0]:
+            # checks diagonal 2
+            if board[0][2] == player[0]:
+                print(win_statement)
+                return True
     return False
 
 
@@ -84,13 +78,11 @@ def main():
     draw_board(board)
     while True:
         # player 1's turn
-        draw_board(board)
         draw_board(play(board, name_1))
         if check_win(board, name_1) or check_draw(board):
             break
 
         # player 2's turn
-        draw_board(board)
         draw_board(play(board, name_2))
         if check_win(board, name_2) or check_draw(board):
             break
